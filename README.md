@@ -1,6 +1,5 @@
 # mix-app
 
-![WayFinder](https://user-images.githubusercontent.com/54945131/223926148-8e479962-c5b4-47ad-8ab0-ed9db0b138ba.gif)
 
 
 ## Project setup
