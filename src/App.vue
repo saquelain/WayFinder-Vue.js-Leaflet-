@@ -1,16 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <LocationForm v-if="!formSubmitted" @form-submitted="onFormSubmitted" />
+  <MapComp v-else @close="onMapClosed"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MapComp from './components/LocationMap.vue';
+import LocationForm from './components/LocationForm.vue';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+    components: {
+      LocationForm,
+      MapComp
+  },
+  data(){
+    return {
+      formSubmitted: false,
+    };
+  },
+  methods: {
+    onFormSubmitted() {
+      this.formSubmitted = true;
+    },
+    onMapClosed() {
+      this.formSubmitted = false;
+    },
+  },
 }
 </script>
 
@@ -21,6 +36,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 30px;
 }
+
 </style>
